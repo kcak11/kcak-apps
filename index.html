@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Apps powered by Ashish'w Web</title>
+<style type="text/css">
+* {
+ margin: 0px;
+ padding: 0px;
+}
+
+a {
+ color: rgb(0, 120, 215);
+}
+
+.italics {
+ font-style: italic;
+}
+
+.hidden {
+ display: none;
+}
+
+.topBar {
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ right: 0px;
+ height: 100px;
+ background-color: #000;
+ border-bottom: 5px solid rgb(0, 120, 215);
+ z-index: 11;
+}
+
+.logoImage {
+ width: 76px;
+ border-radius: 11px;
+ position: absolute;
+ top: 50%;
+ left: 20px;
+ margin-top: -38px;
+}
+
+.topBarText {
+ color: #fff;
+ font-weight: 1100;
+ font-size: 33px;
+ font-family: Verdana;
+ position: absolute;
+ top: 50%;
+ left: 120px;
+}
+
+.mainContent {
+ position: absolute;
+ top: 150px;
+ left: 120px;
+ right: 120px;
+ z-index: 7;
+}
+
+#dataTemplate {
+ display: none;
+}
+
+.app-item {
+ margin: 10px;
+ font-family: Verdana;
+ border: 2px solid grey;
+ cursor: pointer;
+ padding: 11px;
+ border-radius: 11px;
+ overflow: hidden;
+}
+
+.app-item:hover {
+ border: 2px solid rgb(0, 120, 215);
+ background-color: rgb(0, 120, 215);
+ color: #fff;
+}
+
+.app-name {
+ font-weight: bold;
+ display: inline-block;
+}
+
+.app-url {
+ padding-top: 5px;
+ padding-bottom: 5px;
+ font-size: 11px;
+ border: 1px solid rgb(0, 120, 215);
+ border-radius: 50px;
+ display: inline-block;
+ padding: 5px;
+}
+
+.app-item:hover .app-url {
+ border: 1px solid #fff;
+}
+</style>
+</head>
+<body>
+ <div class="topBar">
+  <img src="k-logo.png" class="logoImage" /> <span class="topBarText">Apps powered by <a href="http://www.ashishkumarkc.com" target="_blank" class="italics">Ashish's Web</a></span>
+ </div>
+ <div id="mainContent" class="mainContent"></div>
+ <div id="dataTemplate">
+  <div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
+   <div class="app-name">${app_name}</div>
+   <div class="app-url">${app_url}</div>
+   <div class="app-desc">${app_description}</div>
+   <a href="${app_url}" target="_blank" class="hidden">${app_name}</a>
+  </div>
+ </div>
+ <script type="text/javascript">
+        setTimeout(function() {
+            var tBT = document.querySelectorAll(".topBarText")[0];
+            tBT.style.marginTop = (-tBT.offsetHeight / 2) + "px";
+        }, 11);
+        var handleLink = function(elem) {
+            var url = elem.getAttribute("app-item-url");
+            window.open(url, "_blank");
+        };
+        var data = [ {
+            app_name : "Weather App",
+            app_url : "http://weatherapp.ashishkumarkc.com",
+            app_description : "Get the current weather of your favorite city"
+        }, {
+            app_name : "Weather Forecast App",
+            app_url : "http://forecasts.ashishkumarkc.com",
+            app_description : "Get the 5 day forecasts of temperature, pressure & humidity for your favorite cities"
+        }, {
+            app_name : "Timer App",
+            app_url : "http://timerapp.ashishkumarkc.com",
+            app_description : "A simple Timer / Countdown Application"
+        }, {
+            app_name : "Todo App",
+            app_url : "http://todos.ashishkumarkc.com",
+            app_description : "An App that lets you record & track your todos easily"
+        }, {
+            app_name : "Video Browser",
+            app_url : "http://videoapp.ashishkumarkc.com",
+            app_description : "Easily browse your favorite Youtube videos"
+        }, {
+            app_name : "ES6 Playground",
+            app_url : "http://es6play.ashishkumarkc.com",
+            app_description : "A JavaScript playground that can be used to test your ES6 / JSX snippets"
+        } ];
+        var dataPopulator = function() {
+            var template = "";
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                var templateStr = document.getElementById("dataTemplate").innerHTML;
+                for ( var key in obj) {
+                    var r = new RegExp("\\${" + key + "}", "gi");
+                    templateStr = templateStr.replace(r, obj[key]);
+                }
+                template += templateStr;
+            }
+            document.getElementById("mainContent").innerHTML = template;
+        };
+        dataPopulator();
+ </script>
+</body>
+</html>
