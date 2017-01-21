@@ -70,6 +70,11 @@ a {
  padding: 11px;
  border-radius: 11px;
  overflow: hidden;
+ visibility: hidden;
+}
+
+.app-item.visible {
+ visibility: visible;
 }
 
 .app-item:hover {
@@ -145,6 +150,16 @@ a {
             app_url : "http://es6play.ashishkumarkc.com",
             app_description : "A JavaScript playground that can be used to test your ES6 / JSX snippets"
         } ];
+        var animator = function() {
+            var appItems = document.querySelectorAll(".app-item");
+            for (var i = 0; i < appItems.length; i++) {
+                (function(appItem) {
+                    setTimeout(function() {
+                        appItem.className += " visible";
+                    }, ((i + 1) * 74));
+                }(appItems[i]));
+            }
+        };
         var dataPopulator = function() {
             var template = "";
             for (var i = 0; i < data.length; i++) {
@@ -157,6 +172,7 @@ a {
                 template += templateStr;
             }
             document.getElementById("mainContent").innerHTML = template;
+            animator();
         };
         dataPopulator();
  </script>
