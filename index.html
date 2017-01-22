@@ -65,7 +65,7 @@ a {
 .app-item {
  margin: 10px;
  font-family: Verdana;
- border: 2px solid rgb(128,128,128);
+ border: 2px solid rgb(128, 128, 128);
  cursor: pointer;
  padding: 11px;
  border-radius: 11px;
@@ -97,10 +97,14 @@ a {
  padding-top: 5px;
  padding-bottom: 5px;
  font-size: 11px;
- border: 1px solid rgb(0, 120, 215);
+ border: 1px solid #fff;
  border-radius: 50px;
  display: inline-block;
  padding: 5px;
+}
+
+.app-url.apply-border {
+ border: 1px solid rgb(0, 120, 215);
 }
 
 .app-item:hover .app-url {
@@ -168,11 +172,23 @@ a {
         var animator = function() {
             var appItems = document.querySelectorAll(".app-item");
             for (var i = 0; i < appItems.length; i++) {
-                (function(appItem) {
+                (function(appItem, c) {
                     setTimeout(function() {
                         appItem.className += " visible";
+                        if (c) {
+                            c();
+                        }
                     }, ((i + 1) * 121));
-                }(appItems[i]));
+                }(appItems[i], (i < appItems.length - 1 ? null : function() {
+                    var links = document.querySelectorAll(".app-item .app-url");
+                    for (var i = 0; i < links.length; i++) {
+                        (function(l) {
+                            setTimeout(function() {
+                                l.className += " apply-border";
+                            }, (i * 100));
+                        }(links[i]));
+                    }
+                })));
             }
         };
         var dataPopulator = function() {
