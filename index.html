@@ -70,17 +70,19 @@ a {
  padding: 11px;
  border-radius: 11px;
  overflow: hidden;
- transform: rotateX(0deg); opacity : 0;
+ -webkit-transform: rotateX(0deg);
+ transform: rotateX(0deg);
+ opacity: 0;
  filter: alpha(opacity = 0);
- -webkit-transition: opacity 1s, transform 1s;
- opacity: 0; filter : alpha( opacity = 0); -webkit-transition : opacity 1s, transform 1s;
+ -webkit-transition: opacity 1s, -webkit-transform 1s;
  transition: opacity 1s, transform 1s;
 }
 
 .app-item.visible {
- transform: rotateX(360deg); opacity : 1;
- filter: alpha(opacity = 100);
+ -webkit-transform: rotateX(360deg);
+ transform: rotateX(360deg);
  opacity: 1;
+ filter: alpha(opacity = 100);
 }
 
 .app-item:hover {
@@ -179,14 +181,14 @@ a {
                         if (c) {
                             c();
                         }
-                    }, ((i + 1) * 121));
+                    }, ((i + 1) * 242));
                 }(appItems[i], (i < appItems.length - 1 ? null : function() {
                     var links = document.querySelectorAll(".app-item .app-url");
                     for (var i = 0; i < links.length; i++) {
                         (function(l) {
                             setTimeout(function() {
                                 l.className += " apply-border";
-                            }, (i * 100));
+                            }, (i * 121));
                         }(links[i]));
                     }
                 })));
