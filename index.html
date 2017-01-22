@@ -70,16 +70,17 @@ a {
  padding: 11px;
  border-radius: 11px;
  overflow: hidden;
- opacity: 0;
+ transform: rotateX(0deg); opacity : 0;
  filter: alpha(opacity = 0);
- -webkit-transition: opacity 1s;
- transition: opacity 1s;
- -webkit-transition: opacity 1s;
+ -webkit-transition: opacity 1s, transform 1s;
+ opacity: 0; filter : alpha( opacity = 0); -webkit-transition : opacity 1s, transform 1s;
+ transition: opacity 1s, transform 1s;
 }
 
 .app-item.visible {
- opacity: 1;
+ transform: rotateX(360deg); opacity : 1;
  filter: alpha(opacity = 100);
+ opacity: 1;
 }
 
 .app-item:hover {
