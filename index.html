@@ -118,6 +118,18 @@ a {
  font-family: Tahoma;
  font-size: 44px;
 }
+
+.cpText {
+ visibility: hidden;
+ font-family: Verdana;
+ font-weight: bold;
+ position: absolute;
+ left: 50%;
+}
+
+.cpText.visible {
+ visibility: visible !important;
+}
 </style>
 </head>
 <body>
@@ -127,6 +139,7 @@ a {
  <div id="mainContent" class="mainContent">
   <span class="loader">Loading . . .</span>
  </div>
+ <div class="cpText">&copy ${cp_year} Ashish's Web. All Rights Reserved.</div>
  <div id="dataTemplate">
   <div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
    <div class="app-name">${app_name}</div>
@@ -185,11 +198,20 @@ a {
                 }(appItems[i], (i < appItems.length - 1 ? null : function() {
                     var links = document.querySelectorAll(".app-item .app-url");
                     for (var i = 0; i < links.length; i++) {
-                        (function(l) {
+                        (function(l, c) {
                             setTimeout(function() {
                                 l.className += " apply-border";
+                                if (c) {
+                                    c();
+                                }
                             }, (i * 121));
-                        }(links[i]));
+                        }(links[i], (i < links.length - 1 ? null : function() {
+                            var cpElem = document.querySelectorAll(".cpText")[0];
+                            cpElem.innerHTML = cpElem.innerHTML.replace("${cp_year}", new Date().getFullYear());
+                            cpElem.className += " visible";
+                            document.getElementById("mainContent").appendChild(cpElem);
+                            cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + "px";
+                        })));
                     }
                 })));
             }
