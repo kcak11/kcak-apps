@@ -64,14 +64,14 @@ a {
  display: none;
 }
 
-.app-item-container{
-margin-top: 50px;
- margin-right:10px;
- margin-left:10px;
- margin-bottom:10px;
- 	position:relative;
-	min-width:600px;
--webkit-transform: rotateX(270deg);
+.app-item-container {
+ margin-top: 50px;
+ margin-right: 10px;
+ margin-left: 10px;
+ margin-bottom: 10px;
+ position: relative;
+ min-width: 600px;
+ -webkit-transform: rotateX(270deg);
  transform: rotateX(270deg);
  opacity: 0;
  filter: alpha(opacity = 0);
@@ -81,14 +81,14 @@ margin-top: 50px;
 
 .app-item {
  font-family: 'Chewy', cursive;
- font-size:22px;
+ font-size: 22px;
  border: 2px solid rgb(128, 128, 128);
  min-width: 550px;
  cursor: pointer;
  padding: 11px;
  border-radius: 11px;
  overflow: hidden;
- }
+}
 
 .app-item-container.visible {
  -webkit-transform: rotateX(360deg);
@@ -105,14 +105,14 @@ margin-top: 50px;
 
 .app-name {
  display: block;
- letter-spacing:2px;
- }
+ letter-spacing: 2px;
+}
 
 .app-url {
  padding-top: 5px;
  padding-bottom: 5px;
  font-size: 11px;
- letter-spacing:1px;
+ letter-spacing: 1px;
  border: 1px solid #fff;
  border-radius: 50px;
  display: inline-block;
@@ -127,31 +127,34 @@ margin-top: 50px;
  border: 1px solid #fff;
 }
 
-.built-using{
-	position:absolute;
-	top:-25px;
-	right:25px;
-	background-color:#fff;
-	border:2px solid #000;
-	border-radius:11px;
-	padding:5px;
-	width:200px;
-	height:42px;
+.built-using {
+ position: absolute;
+ top: -25px;
+ right: 25px;
+ background-color: #fff;
+ border: 2px solid #000;
+ border-radius: 11px;
+ padding: 5px;
+ width: 200px;
+ height: 42px;
 }
-.built-using-text{
-	position:absolute;
-	left:10px;
-	top:50%;
-	height:15px;
-	margin-top:-7px;
-	width:75px;
-	font-family:Verdana;
-	font-size:11px;
+
+.built-using-text {
+ position: absolute;
+ left: 10px;
+ top: 50%;
+ height: 15px;
+ margin-top: -7px;
+ width: 75px;
+ font-family: Verdana;
+ font-size: 11px;
 }
-.built-using-icons{
-	position:absolute;
-	right:10px;
+
+.built-using-icons {
+ position: absolute;
+ right: 10px;
 }
+
 .loader {
  font-family: 'Chewy', cursive;
  font-size: 44px;
@@ -181,141 +184,133 @@ margin-top: 50px;
  <div class="cpText">&copy; ${cp_year} Ashish's Web. All Rights Reserved.</div>
  <div id="dataTemplate">
   <div class="app-item-container">
-	  <div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
-	   <div class="app-name">${app_name}</div>
-	   <div class="app-url">${app_url}</div>
-	   <div class="app-desc">${app_description}</div>
-	   <a href="${app_url}" target="_blank" class="hidden">${app_name}</a>
-	  </div>
-	  <div class="built-using">
-		<div class="built-using-text">${framework.text}</div>
-		<div class="built-using-icons">${frameworks}</div>
-	  </div>
+   <div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
+    <div class="app-name">${app_name}</div>
+    <div class="app-url">${app_url}</div>
+    <div class="app-desc">${app_description}</div>
+    <a href="${app_url}" target="_blank" class="hidden">${app_name}</a>
+   </div>
+   <div class="built-using">
+    <div class="built-using-text">${framework.text}</div>
+    <div class="built-using-icons">${frameworks}</div>
+   </div>
   </div>
  </div>
  <script id="kcakScript" type="text/javascript">
-	document.oncontextmenu = function () {
-	  return false;
-	};
-	setTimeout(function () {
-	  var tBT = document.querySelectorAll('.topBarText') [0];
-	  tBT.style.marginTop = ( - tBT.offsetHeight / 2) + 'px';
-	}, 11);
-	var handleLink = function (elem) {
-	  var url = elem.getAttribute('app-item-url');
-	  window.open(url, '_blank');
-	};
-	var data = [
-	  {
-		app_name: 'Blogger App (using Angular 2)',
-		app_url: 'http://ashishkumarkc.github.io/blogger-app/',
-		app_description: 'A Blogging App built using Angular 2',
-		frameworks:["angular2","reactjs","redux"]
-	  },
-	  {
-		app_name: 'Weather App',
-		app_url: 'http://weatherapp.ashishkumarkc.com',
-		app_description: 'Get the current weather of your favorite city',
-		frameworks:["reactjs"]
-	  },
-	  {
-		app_name: 'Weather Forecast App',
-		app_url: 'http://forecasts.ashishkumarkc.com',
-		app_description: 'Get the 5 day forecasts of temperature, pressure & humidity for your favorite cities',
-		frameworks:["reactjs","redux"]
-	  },
-	  {
-		app_name: 'Timer App',
-		app_url: 'http://timerapp.ashishkumarkc.com',
-		app_description: 'A simple Timer / Countdown Application',
-		frameworks:["reactjs"]
-	  },
-	  {
-		app_name: 'Todo App',
-		app_url: 'http://todos.ashishkumarkc.com',
-		app_description: 'An App that lets you record & track your todos easily',
-		frameworks:["reactjs","redux"]
-	  },
-	  {
-		app_name: 'Video Browser',
-		app_url: 'http://videoapp.ashishkumarkc.com',
-		app_description: 'Easily browse your favorite Youtube videos',
-		frameworks:["reactjs"]
-	  },
-	  {
-		app_name: 'ES6 Playground',
-		app_url: 'http://es6play.ashishkumarkc.com',
-		app_description: 'A JavaScript playground that can be used to test your ES6 / JSX snippets',
-		frameworks:["reactjs"]
-	  }
-	];
-	var animator = function () {
-	  var appItems = document.querySelectorAll('.app-item-container');
-	  for (var i = 0; i < appItems.length; i++) {
-		(function (appItem, c) {
-		  setTimeout(function () {
-			appItem.className += ' visible';
-			if (c) {
-			  c();
-			}
-		  }, ((i + 1) * 242));
-		}(appItems[i], (i < appItems.length - 1 ? null : function () {
-		  var links = document.querySelectorAll('.app-item .app-url');
-		  for (var i = 0; i < links.length; i++) {
-			(function (l, c) {
-			  setTimeout(function () {
-				l.className += ' apply-border';
-				if (c) {
-				  c();
-				}
-			  }, (i * 121));
-			}(links[i], (i < links.length - 1 ? null : function () {
-			  var cpElem = document.querySelectorAll('.cpText') [0];
-			  cpElem.innerHTML = cpElem.innerHTML.replace('${cp_year}', new Date().getFullYear());
-			  cpElem.className += ' visible';
-			  document.getElementById('mainContent').appendChild(cpElem);
-			  cpElem.style.marginLeft = ( - cpElem.offsetWidth / 2) + 'px';
-			})));
-		  }
-		})));
-	  }
-	};
-	var technologies={
-		"reactjs":"ReactJS by Facebook",
-		"redux":"Redux - A predictable state container",
-		"angular2":"AngularJS 2 by Google"
-	};
-	var dataPopulator = function () {
-	  var template = '';
-	  for (var i = 0; i < data.length; i++) {
-		var obj = data[i];
-		var templateStr = document.getElementById('dataTemplate').innerHTML;
-		for (var key in obj) {
-		  var r = new RegExp('\\${' + key + '}', 'gi');
-		  if(key!=="frameworks"){
-			  templateStr = templateStr.replace(r, obj[key]);
-		  }else if(key==="frameworks"){
-			var l=obj["frameworks"];
-			if(l && l.length){
-				var icons="";
-				for(var f=0;f<l.length;f++){
-					icons+="<img src=\"assets/images/"+l[f]+".png\" title=\""+technologies[l[f]]+"\" />";
-				}
-				templateStr = templateStr.replace(r, icons);
-				templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'),"Built using:");
-			}else{
-				templateStr = templateStr.replace(r, "");
-			}
-		  }
-		}
-		template += templateStr;
-	  }
-	  document.getElementById('mainContent').innerHTML = template;
-	  animator();
-	};
-	setTimeout(function () {
-	  dataPopulator();
-	}, 1000);
- </script>
+        document.oncontextmenu = function() {
+            return false;
+        };
+        setTimeout(function() {
+            var tBT = document.querySelectorAll('.topBarText')[0];
+            tBT.style.marginTop = (-tBT.offsetHeight / 2) + 'px';
+        }, 11);
+        var handleLink = function(elem) {
+            var url = elem.getAttribute('app-item-url');
+            window.open(url, '_blank');
+        };
+        var data = [ {
+            app_name : 'Blogger App (using Angular 2)',
+            app_url : 'http://ashishkumarkc.github.io/blogger-app/',
+            app_description : 'A Blogging App built using Angular 2',
+            frameworks : [ "angular2", "reactjs", "redux" ]
+        }, {
+            app_name : 'Weather App',
+            app_url : 'http://weatherapp.ashishkumarkc.com',
+            app_description : 'Get the current weather of your favorite city',
+            frameworks : [ "reactjs" ]
+        }, {
+            app_name : 'Weather Forecast App',
+            app_url : 'http://forecasts.ashishkumarkc.com',
+            app_description : 'Get the 5 day forecasts of temperature, pressure & humidity for your favorite cities',
+            frameworks : [ "reactjs", "redux" ]
+        }, {
+            app_name : 'Timer App',
+            app_url : 'http://timerapp.ashishkumarkc.com',
+            app_description : 'A simple Timer / Countdown Application',
+            frameworks : [ "reactjs" ]
+        }, {
+            app_name : 'Todo App',
+            app_url : 'http://todos.ashishkumarkc.com',
+            app_description : 'An App that lets you record & track your todos easily',
+            frameworks : [ "reactjs", "redux" ]
+        }, {
+            app_name : 'Video Browser',
+            app_url : 'http://videoapp.ashishkumarkc.com',
+            app_description : 'Easily browse your favorite Youtube videos',
+            frameworks : [ "reactjs" ]
+        }, {
+            app_name : 'ES6 Playground',
+            app_url : 'http://es6play.ashishkumarkc.com',
+            app_description : 'A JavaScript playground that can be used to test your ES6 / JSX snippets',
+            frameworks : [ "reactjs" ]
+        } ];
+        var animator = function() {
+            var appItems = document.querySelectorAll('.app-item-container');
+            for (var i = 0; i < appItems.length; i++) {
+                (function(appItem, c) {
+                    setTimeout(function() {
+                        appItem.className += ' visible';
+                        if (c) {
+                            c();
+                        }
+                    }, ((i + 1) * 242));
+                }(appItems[i], (i < appItems.length - 1 ? null : function() {
+                    var links = document.querySelectorAll('.app-item .app-url');
+                    for (var i = 0; i < links.length; i++) {
+                        (function(l, c) {
+                            setTimeout(function() {
+                                l.className += ' apply-border';
+                                if (c) {
+                                    c();
+                                }
+                            }, (i * 121));
+                        }(links[i], (i < links.length - 1 ? null : function() {
+                            var cpElem = document.querySelectorAll('.cpText')[0];
+                            cpElem.innerHTML = cpElem.innerHTML.replace('${cp_year}', new Date().getFullYear());
+                            cpElem.className += ' visible';
+                            document.getElementById('mainContent').appendChild(cpElem);
+                            cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + 'px';
+                        })));
+                    }
+                })));
+            }
+        };
+        var technologies = {
+            "reactjs" : "ReactJS by Facebook",
+            "redux" : "Redux - A predictable state container",
+            "angular2" : "AngularJS 2 by Google"
+        };
+        var dataPopulator = function() {
+            var template = '';
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                var templateStr = document.getElementById('dataTemplate').innerHTML;
+                for ( var key in obj) {
+                    var r = new RegExp('\\${' + key + '}', 'gi');
+                    if (key !== "frameworks") {
+                        templateStr = templateStr.replace(r, obj[key]);
+                    } else if (key === "frameworks") {
+                        var l = obj["frameworks"];
+                        if (l && l.length) {
+                            var icons = "";
+                            for (var f = 0; f < l.length; f++) {
+                                icons += "<img src=\"assets/images/"+l[f]+".png\" title=\""+technologies[l[f]]+"\" />";
+                            }
+                            templateStr = templateStr.replace(r, icons);
+                            templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'), "Built using:");
+                        } else {
+                            templateStr = templateStr.replace(r, "");
+                        }
+                    }
+                }
+                template += templateStr;
+            }
+            document.getElementById('mainContent').innerHTML = template;
+            animator();
+        };
+        setTimeout(function() {
+            dataPopulator();
+        }, 1000);
+    </script>
 </body>
 </html>
