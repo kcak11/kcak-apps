@@ -269,7 +269,9 @@ a {
                             cpElem.innerHTML = cpElem.innerHTML.replace('${cp_year}', new Date().getFullYear());
                             cpElem.className += ' visible';
                             document.getElementById('mainContent').appendChild(cpElem);
-                            cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + 'px';
+                            setTimeout(function(){
+								cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + 'px';
+							},11);
                         })));
                     }
                 })));
