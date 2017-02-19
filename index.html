@@ -302,7 +302,7 @@ margin-top: 50px;
 					icons+="<img src=\"assets/images/"+l[f]+".png\" title=\""+technologies[l[f]]+"\" />";
 				}
 				templateStr = templateStr.replace(r, icons);
-				templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'),"Built using");
+				templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'),"Built using:");
 			}else{
 				templateStr = templateStr.replace(r, "");
 			}
