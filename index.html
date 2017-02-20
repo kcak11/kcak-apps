@@ -55,9 +55,12 @@ a {
 .mainContent {
  position: absolute;
  top: 120px;
- left: 120px;
- right: 120px;
+ left: 50%;
+ margin-left:-512px;
  z-index: 7;
+ width:1024px;
+ max-width:1024px;
+ min-width:1024px;
 }
 
 #dataTemplate {
@@ -224,7 +227,7 @@ a {
             window.open(url, '_blank');
         };
         var data = [ {
-            app_name : 'Blogger App (using Angular 2)',
+            app_name : 'Blogger App',
             app_url : 'http://ashishkumarkc.github.io/blogger-app/',
             app_description : 'A Blogging App built using Angular 2',
             frameworks : [ "angular2" ]
