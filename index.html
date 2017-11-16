@@ -7,345 +7,444 @@
 <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
 <style type="text/css">
 * {
- margin: 0px;
- padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 a {
- color: rgb(0, 120, 215);
+	color: rgb(0, 120, 215);
 }
 
 .italics {
- font-style: italic;
+	font-style: italic;
 }
 
 .hidden {
- display: none;
+	display: none;
 }
 
 .topBar {
- position: fixed;
- top: 0px;
- left: 0px;
- right: 0px;
- height: 100px;
- background-color: rgb(44,62,80);
- border-bottom: 5px solid rgb(0, 120, 215);
- z-index: 11;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 100px;
+	background-color: rgb(44, 62, 80);
+	border-bottom: 5px solid rgb(0, 120, 215);
+	z-index: 11;
 }
 
 .logoImage {
- width: 76px;
- border-radius: 11px;
- position: absolute;
- top: 50%;
- left: 20px;
- margin-top: -38px;
+	width: 76px;
+	border-radius: 11px;
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	margin-top: -38px;
 }
 
 .topBarText {
- color: #fff;
- font-weight: 1100;
- font-size: 33px;
- font-family: 'Orbitron', sans-serif;
- position: absolute;
- top: 50%;
- left: 120px;
- min-width: 600px;
+	color: #fff;
+	font-weight: 1100;
+	font-size: 33px;
+	font-family: 'Orbitron', sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 120px;
+	min-width: 600px;
 }
 
 .mainContent {
- position: absolute;
- top: 120px;
- left: 120px;
- right: 120px;
- z-index: 7;
+	position: absolute;
+	top: 120px;
+	left: 120px;
+	right: 120px;
+	z-index: 7;
 }
 
 #dataTemplate {
- display: none;
+	display: none;
 }
 
 .app-item-container {
- margin-top: 50px;
- margin-right: 10px;
- margin-left: 10px;
- margin-bottom: 10px;
- position: relative;
- min-width: 650px;
- -webkit-transform: rotateX(270deg);
- transform: rotateX(270deg);
- opacity: 0;
- filter: alpha(opacity = 0);
- -webkit-transition: opacity 1s, -webkit-transform 1s;
- transition: opacity 1s, transform 1s;
+	margin-top: 50px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	min-width: 650px;
+	-webkit-transform: rotateX(270deg);
+	transform: rotateX(270deg);
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	-webkit-transition: opacity 1s, -webkit-transform 1s;
+	transition: opacity 1s, transform 1s;
 }
 
 .app-item {
- font-family: 'Orbitron', sans-serif;
- font-size: 22px;
- border: 2px solid rgb(128, 128, 128);
- min-width: 600px;
- cursor: pointer;
- padding: 11px;
- border-radius: 11px;
- overflow: hidden;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 22px;
+	border: 2px solid rgb(128, 128, 128);
+	min-width: 600px;
+	cursor: pointer;
+	padding: 11px;
+	border-radius: 11px;
+	overflow: hidden;
 }
 
 .app-item-container.visible {
- -webkit-transform: rotateX(360deg);
- transform: rotateX(360deg);
- opacity: 1;
- filter: alpha(opacity = 100);
+	-webkit-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+	opacity: 1;
+	filter: alpha(opacity = 100);
 }
 
 .app-item:hover {
- border: 2px solid rgb(0, 120, 215);
- background-color: rgb(0, 120, 215);
- color: #fff;
+	border: 2px solid rgb(0, 120, 215);
+	background-color: rgb(0, 120, 215);
+	color: #fff;
 }
 
 .app-name {
- display: block;
+	display: block;
 }
 
 .app-url {
- padding-top: 5px;
- padding-bottom: 5px;
- font-size: 11px;
- border: 1px solid #fff;
- border-radius: 50px;
- display: inline-block;
- padding: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 11px;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	display: inline-block;
+	padding: 5px;
 }
 
 .app-url.apply-border {
- border: 1px solid rgb(0, 120, 215);
+	border: 1px solid rgb(0, 120, 215);
 }
 
 .app-item:hover .app-url {
- border: 1px solid #fff;
+	border: 1px solid #fff;
 }
 
 .app-desc {
- font-size: 14px;
- margin-top: 20px;
+	font-size: 14px;
+	margin-top: 20px;
 }
 
 .built-using {
- position: absolute;
- top: -25px;
- right: 25px;
- background-color: #fff;
- border: 2px solid #000;
- border-radius: 11px;
- padding: 5px;
- width: 200px;
- height: 42px;
+	position: absolute;
+	top: -25px;
+	right: 25px;
+	background-color: #fff;
+	border: 2px solid #000;
+	border-radius: 11px;
+	padding: 5px;
+	width: 200px;
+	height: 42px;
 }
 
 .built-using-text {
- position: absolute;
- left: 10px;
- top: 50%;
- height: 15px;
- margin-top: -7px;
- width: 75px;
- font-family: Verdana;
- font-size: 11px;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	height: 15px;
+	margin-top: -7px;
+	width: 75px;
+	font-family: Verdana;
+	font-size: 11px;
 }
 
 .built-using-icons {
- position: absolute;
- right: 10px;
+	position: absolute;
+	right: 10px;
 }
 
 .loader {
- font-family: 'Orbitron', sans-serif;
- font-size: 44px;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 44px;
 }
 
 .cpText {
- visibility: hidden;
- font-family: 'Orbitron', sans-serif;
- font-size: 14px;
- position: absolute;
- left: 50%;
- margin-bottom: 50px;
+	visibility: hidden;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 14px;
+	position: absolute;
+	left: 50%;
+	margin-bottom: 50px;
 }
 
 .cpText.visible {
- visibility: visible !important;
+	visibility: visible !important;
 }
 
-.preloadImages{
-  display:block;
-  width:1px;
-  height:1px;
-  overflow:hidden;
- }
+.preloadImages {
+	display: block;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
 </style>
 </head>
 <body>
- <div class="topBar">
-  <img src="assets/images/k-logo.png" class="logoImage" /> <span class="topBarText">Apps powered by <a href="http://www.ashishkumarkc.com" target="_blank" class="italics">Ashish's Web</a></span>
- </div>
- <div id="mainContent" class="mainContent">
-  <span class="loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw margin-bottom"></i> Loading . . .</span>
-  <div class="preloadImages">
-   <img src="assets/images/angular.png" title="Angular by Google" />
-   <img src="assets/images/firebase.png" title="Firebase NoSQL DB by Google" />
-   <img src="assets/images/reactjs.png" title="ReactJS by Facebook" />
-   <img src="assets/images/redux.png" title="Redux - A predictable state container for JS Apps" />
-  </div>
- </div>
- <div class="cpText">&copy; ${cp_year} Ashish's Web. All Rights Reserved.</div>
- <div id="dataTemplate">
-  <div class="app-item-container">
-   <div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
-    <div class="app-name">${app_name}</div>
-    <div class="app-url">${app_url}</div>
-    <div class="app-desc">${app_description}</div>
-    <a href="${app_url}" target="_blank" class="hidden">${app_name}</a>
-   </div>
-   <div class="built-using">
-    <div class="built-using-text">${framework.text}</div>
-    <div class="built-using-icons">${frameworks}</div>
-   </div>
-  </div>
- </div>
- <script id="kcakScript" type="text/javascript">
-        document.oncontextmenu = function() {
-            return false;
-        };
-        setTimeout(function() {
-            var tBT = document.querySelectorAll('.topBarText')[0];
-            tBT.style.marginTop = (-tBT.offsetHeight / 2) + 'px';
-        }, 11);
-        var handleLink = function(elem) {
-            var url = elem.getAttribute('app-item-url');
-            window.open(url, '_blank');
-        };
-        var data = [ {
-            app_name : 'Recipe Book App',
-            app_url : 'http://ashishkumarkc.github.io/recipe-book/',
-            app_description : 'A recipe book app built using Angular, covering most of the essential aspects of Angular coding',
-            frameworks : [ "angular", "firebase" ]
-        },{
-            app_name : 'Blogger App',
-            app_url : 'http://ashishkumarkc.github.io/blogger-app/',
-            app_description : 'A Blogging App built using Angular',
-            frameworks : [ "angular" ]
-        }, {
-            app_name : 'Weather App',
-            app_url : 'http://weatherapp.ashishkumarkc.com',
-            app_description : 'Get the current weather of your favorite city',
-            frameworks : [ "reactjs" ]
-        }, {
-            app_name : 'Weather Forecast App',
-            app_url : 'http://forecasts.ashishkumarkc.com',
-            app_description : 'Get the 5 day forecasts of temperature, pressure & humidity for your favorite cities',
-            frameworks : [ "reactjs", "redux" ]
-        }, {
-            app_name : 'Timer App',
-            app_url : 'http://timerapp.ashishkumarkc.com',
-            app_description : 'A simple Timer / Countdown Application',
-            frameworks : [ "reactjs" ]
-        }, {
-            app_name : 'Todo App',
-            app_url : 'http://todos.ashishkumarkc.com',
-            app_description : 'An App that lets you record & track your todos easily',
-            frameworks : [ "reactjs", "redux" ]
-        }, {
-            app_name : 'Video Browser',
-            app_url : 'http://videoapp.ashishkumarkc.com',
-            app_description : 'Easily browse your favorite Youtube videos',
-            frameworks : [ "reactjs" ]
-        }, {
-            app_name : 'ES6 Playground',
-            app_url : 'http://es6play.ashishkumarkc.com',
-            app_description : 'A JavaScript playground that can be used to test your ES6 / JSX snippets',
-            frameworks : [ "reactjs" ]
-        } ];
-        var animator = function() {
-            var appItems = document.querySelectorAll('.app-item-container');
-            for (var i = 0; i < appItems.length; i++) {
-                (function(appItem, c) {
-                    setTimeout(function() {
-                        appItem.className += ' visible';
-                        if (c) {
-                            c();
-                        }
-                    }, ((i + 1) * 242));
-                }(appItems[i], (i < appItems.length - 1 ? null : function() {
-                    var links = document.querySelectorAll('.app-item .app-url');
-                    for (var i = 0; i < links.length; i++) {
-                        (function(l, c) {
-                            setTimeout(function() {
-                                l.className += ' apply-border';
-                                if (c) {
-                                    c();
-                                }
-                            }, (i * 121));
-                        }(links[i], (i < links.length - 1 ? null : function() {
-                            var cpElem = document.querySelectorAll('.cpText')[0];
-                            cpElem.innerHTML = cpElem.innerHTML.replace('${cp_year}', new Date().getFullYear());
-                            cpElem.className += ' visible';
-                            document.getElementById('mainContent').appendChild(cpElem);
-                            setTimeout(function() {
-                                cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + 'px';
-                            }, 11);
-                        })));
-                    }
-                })));
-            }
-        };
-        var technologies = {
-            "reactjs" : "ReactJS by Facebook",
-            "redux" : "Redux - A predictable state container for JS Apps",
-            "angular" : "Angular by Google",
-            "firebase" : "Firebase - NoSQL Cloud DB by Google"
-        };
-        var dataPopulator = function() {
-            var template = '';
-            for (var i = 0; i < data.length; i++) {
-                var obj = data[i];
-                var templateStr = document.getElementById('dataTemplate').innerHTML;
-                for ( var key in obj) {
-                    var r = new RegExp('\\${' + key + '}', 'gi');
-                    if (key !== "frameworks") {
-                        templateStr = templateStr.replace(r, obj[key]);
-                    } else if (key === "frameworks") {
-                        var l = obj["frameworks"];
-                        if (l && l.length) {
-                            var icons = "";
-                            for (var f = 0; f < l.length; f++) {
-                                icons += "<img src=\"assets/images/"+l[f]+".png\" title=\""+technologies[l[f]]+"\" />";
-                            }
-                            templateStr = templateStr.replace(r, icons);
-                            templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'), "Built using:");
-                        } else {
-                            templateStr = templateStr.replace(r, "");
-                        }
-                    }
-                }
-                template += templateStr;
-            }
-            document.getElementById('mainContent').innerHTML = template;
-            animator();
-        };
-        setTimeout(function() {
-            dataPopulator();
-        }, 2000);
-    </script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<div class="topBar">
+		<img src="assets/images/k-logo.png" class="logoImage" /> <span class="topBarText">Apps powered by <a href="http://www.ashishkumarkc.com" target="_blank" class="italics">Ashish's Web</a></span>
+	</div>
+	<div id="mainContent" class="mainContent">
+		<span class="loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw margin-bottom"></i> Loading . . .</span>
+		<div class="preloadImages">
+			<img src="assets/images/angular.png" title="Angular by Google" /> <img src="assets/images/firebase.png" title="Firebase NoSQL DB by Google" /> <img src="assets/images/reactjs.png" title="ReactJS by Facebook" /> <img src="assets/images/redux.png" title="Redux - A predictable state container for JS Apps" />
+		</div>
+	</div>
+	<div class="cpText">&copy; ${cp_year} Ashish's Web. All Rights Reserved.</div>
+	<div id="dataTemplate">
+		<div class="app-item-container">
+			<div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
+				<div class="app-name">${app_name}</div>
+				<div class="app-url">${app_url}</div>
+				<div class="app-desc">${app_description}</div>
+				<a href="${app_url}" target="_blank" class="hidden">${app_name}</a>
+			</div>
+			<div class="built-using">
+				<div class="built-using-text">${framework.text}</div>
+				<div class="built-using-icons">${frameworks}</div>
+			</div>
+		</div>
+	</div>
+	<script id="kcakScript" type="text/javascript">
+		document.oncontextmenu = function() {
+			return false;
+		};
+		setTimeout(function() {
+			var tBT = document.querySelectorAll('.topBarText')[0];
+			tBT.style.marginTop = (-tBT.offsetHeight / 2) + 'px';
+		}, 11);
+		var handleLink = function(elem) {
+			var url = elem.getAttribute('app-item-url');
+			window.open(url, '_blank');
+		};
+		var data = [ {
+			app_name : 'Recipe Book App',
+			app_url : 'http://ashishkumarkc.github.io/recipe-book/',
+			app_description : 'A recipe book app built using Angular, covering most of the essential aspects of Angular coding',
+			frameworks : [ "angular", "firebase" ]
+		}, {
+			app_name : 'Blogger App',
+			app_url : 'http://ashishkumarkc.github.io/blogger-app/',
+			app_description : 'A Blogging App built using Angular',
+			frameworks : [ "angular" ]
+		}, {
+			app_name : 'Weather App',
+			app_url : 'http://weatherapp.ashishkumarkc.com',
+			app_description : 'Get the current weather of your favorite city',
+			frameworks : [ "reactjs" ]
+		}, {
+			app_name : 'Weather Forecast App',
+			app_url : 'http://forecasts.ashishkumarkc.com',
+			app_description : 'Get the 5 day forecasts of temperature, pressure & humidity for your favorite cities',
+			frameworks : [ "reactjs", "redux" ]
+		}, {
+			app_name : 'Timer App',
+			app_url : 'http://timerapp.ashishkumarkc.com',
+			app_description : 'A simple Timer / Countdown Application',
+			frameworks : [ "reactjs" ]
+		}, {
+			app_name : 'Todo App',
+			app_url : 'http://todos.ashishkumarkc.com',
+			app_description : 'An App that lets you record & track your todos easily',
+			frameworks : [ "reactjs", "redux" ]
+		}, {
+			app_name : 'Video Browser',
+			app_url : 'http://videoapp.ashishkumarkc.com',
+			app_description : 'Easily browse your favorite Youtube videos',
+			frameworks : [ "reactjs" ]
+		}, {
+			app_name : 'ES6 Playground',
+			app_url : 'http://es6play.ashishkumarkc.com',
+			app_description : 'A JavaScript playground that can be used to test your ES6 / JSX snippets',
+			frameworks : [ "reactjs" ]
+		} ];
+		var animator = function() {
+			var appItems = document.querySelectorAll('.app-item-container');
+			for (var i = 0; i < appItems.length; i++) {
+				(function(appItem, c) {
+					setTimeout(function() {
+						appItem.className += ' visible';
+						if (c) {
+							c();
+						}
+					}, ((i + 1) * 242));
+				}(appItems[i], (i < appItems.length - 1 ? null : function() {
+					var links = document.querySelectorAll('.app-item .app-url');
+					for (var i = 0; i < links.length; i++) {
+						(function(l, c) {
+							setTimeout(function() {
+								l.className += ' apply-border';
+								if (c) {
+									c();
+								}
+							}, (i * 121));
+						}(links[i], (i < links.length - 1 ? null : function() {
+							var cpElem = document.querySelectorAll('.cpText')[0];
+							cpElem.innerHTML = cpElem.innerHTML.replace('${cp_year}', new Date().getFullYear());
+							cpElem.className += ' visible';
+							document.getElementById('mainContent').appendChild(cpElem);
+							setTimeout(function() {
+								cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + 'px';
+							}, 11);
+						})));
+					}
+				})));
+			}
+		};
+		var technologies = {
+			"reactjs" : "ReactJS by Facebook",
+			"redux" : "Redux - A predictable state container for JS Apps",
+			"angular" : "Angular by Google",
+			"firebase" : "Firebase - NoSQL Cloud DB by Google"
+		};
+		var dataPopulator = function() {
+			var template = '';
+			for (var i = 0; i < data.length; i++) {
+				var obj = data[i];
+				var templateStr = document.getElementById('dataTemplate').innerHTML;
+				for ( var key in obj) {
+					var r = new RegExp('\\${' + key + '}', 'gi');
+					if (key !== "frameworks") {
+						templateStr = templateStr.replace(r, obj[key]);
+					} else if (key === "frameworks") {
+						var l = obj["frameworks"];
+						if (l && l.length) {
+							var icons = "";
+							for (var f = 0; f < l.length; f++) {
+								icons += "<img src=\"assets/images/"+l[f]+".png\" title=\""+technologies[l[f]]+"\" />";
+							}
+							templateStr = templateStr.replace(r, icons);
+							templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'), "Built using:");
+						} else {
+							templateStr = templateStr.replace(r, "");
+						}
+					}
+				}
+				template += templateStr;
+			}
+			document.getElementById('mainContent').innerHTML = template;
+			animator();
+		};
+		setTimeout(function() {
+			dataPopulator();
+		}, 2000);
+	</script>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-100783399-2', 'auto');
-      ga('send', 'pageview');
-    </script>
+		ga('create', 'UA-100783399-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<div style="display: none; visibility: hidden;">
+		<div>
+			<span>Apps powered by Ashish's Web</span>
+		</div>
+		<div>
+			<div>
+				<div>
+					<div>Recipe Book App</div>
+					<div>http://ashishkumarkc.github.io/recipe-book/</div>
+					<div>A recipe book app built using Angular, covering most of the essential aspects of Angular coding</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>Blogger App</div>
+					<div>http://ashishkumarkc.github.io/blogger-app/</div>
+					<div>A Blogging App built using Angular</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>Weather App</div>
+					<div>http://weatherapp.ashishkumarkc.com</div>
+					<div>Get the current weather of your favorite city</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>Weather Forecast App</div>
+					<div>http://forecasts.ashishkumarkc.com</div>
+					<div>Get the 5 day forecasts of temperature, pressure &amp; humidity for your favorite cities</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>Timer App</div>
+					<div>http://timerapp.ashishkumarkc.com</div>
+					<div>A simple Timer / Countdown Application</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>Todo App</div>
+					<div>http://todos.ashishkumarkc.com</div>
+					<div>An App that lets you record &amp; track your todos easily</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>Video Browser</div>
+					<div>http://videoapp.ashishkumarkc.com</div>
+					<div>Easily browse your favorite Youtube videos</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>ES6 Playground</div>
+					<div>http://es6play.ashishkumarkc.com</div>
+					<div>A JavaScript playground that can be used to test your ES6 / JSX snippets</div>
+				</div>
+				<div>
+					<div>Built using:</div>
+					<div></div>
+				</div>
+			</div>
+			<div>&copy; 2017 Ashish's Web. All Rights Reserved.</div>
+		</div>
+	</div>
 </body>
 </html>
