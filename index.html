@@ -188,7 +188,7 @@ a {
 </head>
 <body>
 	<div class="topBar">
-		<img src="assets/images/k-logo.png" class="logoImage" /> <span class="topBarText">Apps powered by <a href="http://www.ashishkumarkc.com" target="_blank" class="italics">Ashish's Web</a></span>
+		<img src="assets/images/k-logo.png" class="logoImage" /> <span class="topBarText">Apps powered by <a href="http://www.ashishkumarkc.com" target="_blank" class="italics mainSiteLink">Ashish's Web</a></span>
 	</div>
 	<div id="mainContent" class="mainContent">
 		<span class="loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw margin-bottom"></i> Loading . . .</span>
@@ -215,6 +215,9 @@ a {
 		document.oncontextmenu = function() {
 			return false;
 		};
+		if(window.location.href.indexOf("rendervia=kcak11") > -1){
+			document.querySelector(".mainSiteLink").setAttribute("href", "https://www.kcak11.com");
+		}
 		var handleLink = function(elem) {
 			var url = elem.getAttribute('app-item-url');
 			window.open(url, '_blank');
