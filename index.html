@@ -215,10 +215,6 @@ a {
 		document.oncontextmenu = function() {
 			return false;
 		};
-		setTimeout(function() {
-			var tBT = document.querySelectorAll('.topBarText')[0];
-			tBT.style.marginTop = (-tBT.offsetHeight / 2) + 'px';
-		}, 11);
 		var handleLink = function(elem) {
 			var url = elem.getAttribute('app-item-url');
 			window.open(url, '_blank');
