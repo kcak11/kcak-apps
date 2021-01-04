@@ -1,4 +1,4 @@
 User-agent: *
 Allow: *
 
-Sitemap: http://apps.ashishkumarkc.com/sitemap.xml
+Sitemap: https://apps.ashishkumarkc.com/sitemap.xml
