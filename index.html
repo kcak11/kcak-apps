@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Apps powered by Ashish's Web</title>
+    <meta name="keywords" content="aal,aaps,all,an,and,android,angular,angularjs,api,app,application,applications,apps,architecture,backend,based,best,build,builder,building,can,com,comparison,components,cordova,create,creator,cross,database,design,desktop,develop,development,driven,easiest,easy,elements,end,enterprise,examples,express,fast,fastest,fastweb,for,frame,framework,frameworks,free,front,frontend,full,games,go,gui,html,html5,hybrid,ide,in,intel,interface,ionic,ios,iphone,java,javascript,jquery,js,latest,libraries,library,list,make,maker,mobile,modern,most,mvc,my,native,neu,new,newapp,of,open,pc,php,platform,platforms,popular,portal,programming,python,quick,rad,ranking,rapid,responsive,rich,ruby,secure,security,server,side,simple,site,source,stack,store,template,the,to,tools,top,typescript,ui,update,use,user,using,view,way,web,webapp,webpage,website,websites,which,windows,with,you,àpps" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            color: #6eb1dd;
+        }
+
+        .italics {
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .topBar {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            height: 100px;
+            background-color: rgb(44, 62, 80);
+            border-bottom: 5px solid #6eb1dd;
+            z-index: 11;
+        }
+
+        .logoImage {
+            width: 76px;
+            border-radius: 11px;
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            margin-top: -38px;
+        }
+
+        .topBarText {
+            color: #fff;
+            font-size: 33px;
+            font-family: 'Orbitron', sans-serif;
+            position: absolute;
+            top: 50%;
+            margin-top: -16.5px;
+            left: 120px;
+            min-width: 600px;
+        }
+
+        .mainContent {
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            right: 120px;
+            z-index: 7;
+        }
+
+        #dataTemplate {
+            display: none;
+        }
+
+        .app-item-container {
+            margin-top: 50px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            min-width: 650px;
+            -webkit-transform: rotateX(270deg);
+            transform: rotateX(270deg);
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: opacity 1s, -webkit-transform 1s;
+            transition: opacity 1s, transform 1s;
+        }
+
+        .app-item {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 22px;
+            border: 2px solid rgb(128, 128, 128);
+            min-width: 600px;
+            cursor: pointer;
+            padding: 11px;
+            border-radius: 11px;
+            overflow: hidden;
+        }
+
+        .app-item-container.visible {
+            -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+
+        .app-item:hover {
+            border: 2px solid rgb(0, 120, 215);
+            background-color: rgb(0, 120, 215);
+            color: #fff;
+        }
+
+        .app-name {
+            display: block;
+        }
+
+        .app-url {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 11px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .app-url.apply-border {
+            border: 1px solid rgb(0, 120, 215);
+        }
+
+        .app-item:hover .app-url {
+            border: 1px solid #fff;
+        }
+
+        .app-desc {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .built-using {
+            position: absolute;
+            top: -25px;
+            right: 25px;
+            background-color: #fff;
+            border: 2px solid #000;
+            border-radius: 11px;
+            padding: 5px;
+            width: 200px;
+            height: 42px;
+        }
+
+        .built-using-text {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            height: 15px;
+            margin-top: -7px;
+            width: 75px;
+            font-family: Verdana;
+            font-size: 11px;
+        }
+
+        .built-using-icons {
+            position: absolute;
+            right: 10px;
+        }
+
+        .loader {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 44px;
+        }
+
+        .cpText {
+            visibility: hidden;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            position: absolute;
+            left: 50%;
+            margin-bottom: 50px;
+        }
+
+        .cpText.visible {
+            visibility: visible !important;
+        }
+
+        .preloadImages {
+            display: block;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topBar">
+        <img src="assets/images/k-logo.png" class="logoImage" /> <span class="topBarText">Apps powered by <a href="http://www.ashishkumarkc.com" target="_blank" class="italics mainSiteLink">Ashish's Web</a></span>
+    </div>
+    <div id="mainContent" class="mainContent">
+        <span class="loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw margin-bottom"></i> Loading . . .</span>
+        <div class="preloadImages">
+            <img src="assets/images/html5.png" title="HTML 5"> <img src="assets/images/css3.png" title="CSS 3"> <img src="assets/images/javascript.png" title="JavaScript"> <img src="assets/images/angular.png" title="Angular by Google" /> <img src="assets/images/firebase.png" title="Firebase NoSQL DB by Google" /> <img src="assets/images/reactjs.png" title="ReactJS by Facebook" /> <img src="assets/images/redux.png" title="Redux - A predictable state container for JS Apps" />
+        </div>
+    </div>
+    <div class="cpText">&copy; ${cp_year} Ashish's Web. All Rights Reserved.</div>
+    <div id="dataTemplate">
+        <div class="app-item-container">
+            <div class="app-item" onclick="handleLink(this);" app-item-url="${app_url}">
+                <div class="app-name">${app_name}</div>
+                <div class="app-url">${app_url}</div>
+                <div class="app-desc">${app_description}</div>
+                <a href="${app_url}" target="_blank" class="hidden">${app_name}</a>
+            </div>
+            <div class="built-using">
+                <div class="built-using-text">${framework.text}</div>
+                <div class="built-using-icons">${frameworks}</div>
+            </div>
+        </div>
+    </div>
+    <script id="kcakScript" type="text/javascript">
+        document.oncontextmenu = function () {
+            return false;
+        };
+        if (window.location.href.indexOf("rendervia=kcak11") > -1) {
+            document.querySelector(".mainSiteLink").setAttribute("href", "https://www.kcak11.com");
+        }
+        var handleLink = function (elem) {
+            var url = elem.getAttribute('app-item-url');
+            window.open(url, '_blank');
+        };
+        var data = [{
+            app_name: 'GridBox Animation',
+            app_url: 'https://kcak11.com/gridbox-animation',
+            app_description: 'An Animation app made using HTML5, CSS3 (Animations & Transitions) & JavaScript',
+            frameworks: ["html5", "css3", "javascript"]
+        }, {
+            app_name: 'Recipe Book App',
+            app_url: 'https://recipe-book.ashishkumarkc.com',
+            app_description: 'A recipe book app built using Angular, covering most of the essential aspects of Angular coding',
+            frameworks: ["angular", "firebase"]
+        }, {
+            app_name: 'Blogger App',
+            app_url: 'https://blogger-app.ashishkumarkc.com',
+            app_description: 'A Blogging App built using Angular',
+            frameworks: ["angular"]
+        }, {
+            app_name: 'Weather App',
+            app_url: 'https://weatherapp.ashishkumarkc.com',
+            app_description: 'Get the current weather of your favorite city',
+            frameworks: ["reactjs"]
+        }, {
+            app_name: 'Weather Forecast App',
+            app_url: 'https://forecasts.ashishkumarkc.com',
+            app_description: 'Get the 5 day forecasts of temperature, pressure & humidity for your favorite cities',
+            frameworks: ["reactjs", "redux"]
+        }, {
+            app_name: 'Timer App',
+            app_url: 'https://timerapp.ashishkumarkc.com',
+            app_description: 'A simple Timer / Countdown Application',
+            frameworks: ["reactjs"]
+        }, {
+            app_name: 'Todo App',
+            app_url: 'https://todos.ashishkumarkc.com',
+            app_description: 'An App that lets you record & track your todos easily',
+            frameworks: ["reactjs", "redux"]
+        }, {
+            app_name: 'Video Browser',
+            app_url: 'https://videoapp.ashishkumarkc.com',
+            app_description: 'Easily browse your favorite Youtube videos',
+            frameworks: ["reactjs"]
+        }, {
+            app_name: 'ES6 Playground',
+            app_url: 'https://es6play.ashishkumarkc.com',
+            app_description: 'A JavaScript playground that can be used to test your ES6 / JSX snippets',
+            frameworks: ["reactjs"]
+        }];
+        var animator = function () {
+            var appItems = document.querySelectorAll('.app-item-container');
+            for (var i = 0; i < appItems.length; i++) {
+                (function (appItem, c) {
+                    setTimeout(function () {
+                        appItem.className += ' visible';
+                        if (c) {
+                            c();
+                        }
+                    }, ((i + 1) * 242));
+                }(appItems[i], (i < appItems.length - 1 ? null : function () {
+                    var links = document.querySelectorAll('.app-item .app-url');
+                    for (var i = 0; i < links.length; i++) {
+                        (function (l, c) {
+                            setTimeout(function () {
+                                l.className += ' apply-border';
+                                if (c) {
+                                    c();
+                                }
+                            }, (i * 121));
+                        }(links[i], (i < links.length - 1 ? null : function () {
+                            var cpElem = document.querySelectorAll('.cpText')[0];
+                            cpElem.innerHTML = cpElem.innerHTML.replace('${cp_year}', new Date().getFullYear());
+                            cpElem.className += ' visible';
+                            document.getElementById('mainContent').appendChild(cpElem);
+                            setTimeout(function () {
+                                cpElem.style.marginLeft = (-cpElem.offsetWidth / 2) + 'px';
+                            }, 11);
+                        })));
+                    }
+                })));
+            }
+        };
+        var technologies = {
+            "html5": "HTML 5",
+            "css3": "CSS 3",
+            "javascript": "JavaScript",
+            "reactjs": "ReactJS by Facebook",
+            "redux": "Redux - A predictable state container for JS Apps",
+            "angular": "Angular by Google",
+            "firebase": "Firebase - NoSQL Cloud DB by Google"
+        };
+        var dataPopulator = function () {
+            var template = '';
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                var templateStr = document.getElementById('dataTemplate').innerHTML;
+                for (var key in obj) {
+                    var r = new RegExp('\\${' + key + '}', 'gi');
+                    if (key !== "frameworks") {
+                        templateStr = templateStr.replace(r, obj[key]);
+                    } else if (key === "frameworks") {
+                        var l = obj["frameworks"];
+                        if (l && l.length) {
+                            var icons = "";
+                            for (var f = 0; f < l.length; f++) {
+                                icons += "<img src=\"assets/images/" + l[f] + ".png\" title=\"" + technologies[l[f]] + "\" />";
+                            }
+                            templateStr = templateStr.replace(r, icons);
+                            templateStr = templateStr.replace(new RegExp('\\${framework.text}', 'gi'), "Built using:");
+                        } else {
+                            templateStr = templateStr.replace(r, "");
+                        }
+                    }
+                }
+                template += templateStr;
+            }
+            document.getElementById('mainContent').innerHTML = template;
+            animator();
+        };
+        setTimeout(function () {
+            dataPopulator();
+        }, 2000);
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6550NJFJGX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6550NJFJGX');
+    </script>
+    <div style="display: none; visibility: hidden;">
+        <div>
+            <span>Apps powered by Ashish's Web</span>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <div>Recipe Book App</div>
+                    <div>https://recipe-book.ashishkumarkc.com</div>
+                    <div>A recipe book app built using Angular, covering most of the essential aspects of Angular coding</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>Blogger App</div>
+                    <div>https://blogger-app.ashishkumarkc.com</div>
+                    <div>A Blogging App built using Angular</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>Weather App</div>
+                    <div>https://weatherapp.ashishkumarkc.com</div>
+                    <div>Get the current weather of your favorite city</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>Weather Forecast App</div>
+                    <div>https://forecasts.ashishkumarkc.com</div>
+                    <div>Get the 5 day forecasts of temperature, pressure &amp; humidity for your favorite cities</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>Timer App</div>
+                    <div>https://timerapp.ashishkumarkc.com</div>
+                    <div>A simple Timer / Countdown Application</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>Todo App</div>
+                    <div>https://todos.ashishkumarkc.com</div>
+                    <div>An App that lets you record &amp; track your todos easily</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>Video Browser</div>
+                    <div>https://videoapp.ashishkumarkc.com</div>
+                    <div>Easily browse your favorite Youtube videos</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>ES6 Playground</div>
+                    <div>https://es6play.ashishkumarkc.com</div>
+                    <div>A JavaScript playground that can be used to test your ES6 / JSX snippets</div>
+                </div>
+                <div>
+                    <div>Built using:</div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- vTag:VjJoeVZteFZlRll5VGtsalJtUK9ZV3RhU1ZacVFtRlRNazE1VTJ0V1ZXSkhhRzlVVm1oRFZWWmFkRTFVVWxSTmF -->
